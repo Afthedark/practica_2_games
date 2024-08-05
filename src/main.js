@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 
 import './assets/styles/styles.scss'
+import './assets/styles/buttons.scss'
+import './assets/styles/form.scss'
+import './assets/styles/table.scss'
 // Importaciones axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -16,3 +19,5 @@ app.use(VueAxios, axios);
 app.use(toasts);
 
 app.mount('#app')
+
+

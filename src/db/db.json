@@ -43,13 +43,29 @@
     {
       "name": "Shoter",
       "id": "C4JwqAq"
+    },
+    {
+      "name": "Exploración ",
+      "id": "4jOewWh"
+    },
+    {
+      "name": "Espacio",
+      "id": "sNUjOGT"
+    },
+    {
+      "name": "Mundo abierto",
+      "id": "brsPdkM"
+    },
+    {
+      "name": "Steam, Epic, Gog",
+      "id": "WQxiSdj"
     }
   ],
   "games": [
     {
       "id": "1",
       "name": "Call of Duty black ops 6",
-      "categoryId": "1",
+      "categoryId": "brsPdkM",
       "platforms": [
         "PC"
       ]
