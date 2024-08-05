@@ -1,0 +1,222 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Acción"
+    },
+    {
+      "id": "2",
+      "name": "Aventura"
+    },
+    {
+      "id": "3",
+      "name": "Estrategia"
+    },
+    {
+      "id": "4",
+      "name": "Deportes"
+    },
+    {
+      "id": "5",
+      "name": "RPG"
+    },
+    {
+      "id": "6",
+      "name": "Simulación"
+    },
+    {
+      "id": "7",
+      "name": "Puzzle"
+    },
+    {
+      "id": "8",
+      "name": "Carreras"
+    },
+    {
+      "id": "9",
+      "name": "Multijugador"
+    },
+    {
+      "id": "10",
+      "name": "Terror"
+    },
+    {
+      "name": "Shoter",
+      "id": "C4JwqAq"
+    }
+  ],
+  "games": [
+    {
+      "id": "1",
+      "name": "Call of Duty black ops 6",
+      "categoryId": "1",
+      "platforms": [
+        "PC"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "The Legend of Zelda",
+      "categoryId": "2",
+      "platforms": [
+        "Nintendo Switch"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Civilization VI",
+      "categoryId": "3",
+      "platforms": [
+        "PC",
+        "Mac",
+        "iOS"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "FIFA 21",
+      "categoryId": "4",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One",
+        "Nintendo Switch"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Final Fantasy VII Remake",
+      "categoryId": "5",
+      "platforms": [
+        "PS4"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "The Sims 4",
+      "categoryId": "6",
+      "platforms": [
+        "PC",
+        "Mac",
+        "PS4",
+        "Xbox One"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Tetris Effect",
+      "categoryId": "7",
+      "platforms": [
+        "PC",
+        "PS4"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Forza Horizon 4",
+      "categoryId": "8",
+      "platforms": [
+        "PC",
+        "Xbox One"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Among Us",
+      "categoryId": "9",
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Resident Evil 7",
+      "categoryId": "10",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Assassin's Creed Valhalla",
+      "categoryId": "2",
+      "platforms": [
+        "PC",
+        "PS4",
+        "PS5",
+        "Xbox One",
+        "Xbox Series X"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Fortnite",
+      "categoryId": "1",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One",
+        "Nintendo Switch",
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Stardew Valley",
+      "categoryId": "6",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One",
+        "Nintendo Switch",
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "League of Legends",
+      "categoryId": "9",
+      "platforms": [
+        "PC"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Dark Souls III",
+      "categoryId": "5",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Overwatch",
+      "categoryId": "1",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One",
+        "Nintendo Switch"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Rocket League",
+      "categoryId": "8",
+      "platforms": [
+        "PC",
+        "PS4",
+        "Xbox One",
+        "Nintendo Switch"
+      ]
+    }
+  ]
+}
