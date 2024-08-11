@@ -18,7 +18,7 @@
     },
     {
       "id": "5",
-      "name": "RPG"
+      "name": "RPGs"
     },
     {
       "id": "6",
@@ -59,7 +59,9 @@
       "name": "Call of Duty black ops 6",
       "categoryId": "5",
       "platforms": [
-        "PS4"
+        "PS4",
+        "PC",
+        "Nintendo Switch"
       ]
     },
     {
@@ -189,6 +191,22 @@
       "platforms": [
         "Nintendo Switch"
       ]
+    },
+    {
+      "name": "starfield",
+      "platforms": [
+        "XBOX"
+      ],
+      "categoryId": "5",
+      "id": "TePQJYy"
+    },
+    {
+      "name": "mario kart 8 pirata ",
+      "platforms": [
+        "PC"
+      ],
+      "categoryId": "8",
+      "id": "86Ve4g6"
     }
   ]
 }

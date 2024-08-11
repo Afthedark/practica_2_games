@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Editar Categoría</h1>
+    <h1>Editar Juego</h1>
     <form @submit.prevent="submitForm" v-if="form">
       <div class="form-group">
         <label for="name">Nombre:</label>
@@ -15,22 +15,18 @@
       </div>
 
       <div class="form-group">
-        <label for="plataform">Plataforma:</label>
-        <select
-          id="plataform"
-          v-model="form.plataform"
-          :class="{ 'is-invalid': errors.plataform }"
-        >
-          <option
-            v-for="plataform in plataforms"
-            :key="plataform"
-            :value="plataform"
-          >
-            {{ plataform }}
-          </option>
-        </select>
-        <div v-if="errors.plataform" class="invalid-feedback">
-          {{ errors.plataform }}
+        <label>Plataformas:</label>
+        <div v-for="platform in plataforms" :key="platform">
+          <input
+            type="checkbox"
+            :id="platform"
+            :value="platform"
+            v-model="form.platforms"
+          />
+          <label :for="platform">{{ platform }}</label>
+        </div>
+        <div v-if="errors.platforms" class="invalid-feedback">
+          {{ errors.platforms }}
         </div>
       </div>
 
@@ -61,74 +57,22 @@
 
 <script>
 import axios from "axios";
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
-  name: "EditCategoryView",
+  name: "EditGameView",
   props: ["item"],
   data() {
     return {
       plataforms: ["PC", "PS4", "Nintendo Switch", "Xbox One"],
       form: {
         name: "",
-        plataform: null,
+        platforms: [],
         category: null,
       },
       errors: {},
       categories: [],
     };
-  },
-  methods: {
-    validateForm() {
-      this.errors = {};
-
-      if (!this.form.name) {
-        this.errors.name = "El nombre es obligatorio.";
-      }
-
-      if (!this.form.plataform) {
-        this.errors.plataform = "La plataforma es obligatoria.";
-      }
-
-      if (!this.form.category) {
-        this.errors.category = "La categoría es obligatoria.";
-      }
-
-      return Object.keys(this.errors).length === 0;
-    },
-    getCategories() {
-      const vm = this;
-      axios
-        .get(this.baseUrl + "/categories")
-        .then(function (response) {
-          vm.categories = response.data;
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    },
-    submitForm() {
-      if (this.validateForm()) {
-        this.save();
-      }
-    },
-    save() {
-      const vm = this;
-      axios
-        .patch(this.baseUrl + `/games/${this.item.id}`, {
-          name: vm.form.name,
-          platforms: [vm.form.plataform],
-          categoryId: vm.form.category,
-        })
-        .then(function (response) {
-          if (response.status == "200") {
-            vm.$emit("on-update", response.data);
-          }
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    },
   },
   computed: {
     ...mapGetters(["getBaseUrl"]),
@@ -136,20 +80,7 @@ export default {
       return this.getBaseUrl;
     },
   },
-  mounted() {
-    this.getCategories();
-    this.initializeForm();
-  },
-  watch: {
-    item: {
-      handler() {
-        this.initializeForm();
-      },
-      deep: true,
-    },
-  },
   methods: {
-    ...mapActions(["increment"]),
     validateForm() {
       this.errors = {};
 
@@ -157,8 +88,8 @@ export default {
         this.errors.name = "El nombre es obligatorio.";
       }
 
-      if (!this.form.plataform) {
-        this.errors.plataform = "La plataforma es obligatoria.";
+      if (this.form.platforms.length === 0) {
+        this.errors.platforms = "Debe seleccionar al menos una plataforma.";
       }
 
       if (!this.form.category) {
@@ -181,7 +112,7 @@ export default {
     initializeForm() {
       this.form = {
         name: this.item.name || "",
-        plataform: this.item.platforms ? this.item.platforms[0] : null,
+        platforms: this.item.platforms || [],
         category: this.item.categoryId || null,
       };
     },
@@ -195,7 +126,7 @@ export default {
       axios
         .patch(this.baseUrl + "/games/" + this.item.id, {
           name: vm.form.name,
-          platforms: [vm.form.plataform],
+          platforms: vm.form.platforms,
           categoryId: vm.form.category,
         })
         .then(function (response) {
@@ -206,6 +137,18 @@ export default {
         .catch(function (error) {
           console.error(error);
         });
+    },
+  },
+  mounted() {
+    this.getCategories();
+    this.initializeForm();
+  },
+  watch: {
+    item: {
+      handler() {
+        this.initializeForm();
+      },
+      deep: true,
     },
   },
 };

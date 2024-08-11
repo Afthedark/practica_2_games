@@ -15,22 +15,18 @@
       </div>
 
       <div class="form-group">
-        <label for="plataform">Plataforma:</label>
-        <select
-          id="plataform"
-          v-model="form.plataform"
-          :class="{ 'is-invalid': errors.plataform }"
-        >
-          <option
-            v-for="plataform in plataforms"
-            :key="plataform"
-            :value="plataform"
-          >
-            {{ plataform }}
-          </option>
-        </select>
-        <div v-if="errors.plataform" class="invalid-feedback">
-          {{ errors.plataform }}
+        <label>Plataformas:</label>
+        <div v-for="platform in plataforms" :key="platform">
+          <input
+            type="checkbox"
+            :id="platform"
+            :value="platform"
+            v-model="form.platforms"
+          />
+          <label :for="platform">{{ platform }}</label>
+        </div>
+        <div v-if="errors.platforms" class="invalid-feedback">
+          {{ errors.platforms }}
         </div>
       </div>
 
@@ -61,6 +57,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
+
 export default {
   name: "NewGame",
   data() {
@@ -68,7 +65,7 @@ export default {
       plataforms: ["PC", "PS4", "XBOX"],
       form: {
         name: "",
-        plataform: null,
+        platforms: [],
         category: null,
       },
       errors: {},
@@ -83,8 +80,8 @@ export default {
         this.errors.name = "El nombre es obligatorio.";
       }
 
-      if (!this.form.plataform) {
-        this.errors.plataform = "La plataforma es obligatoria.";
+      if (this.form.platforms.length === 0) {
+        this.errors.platforms = "Debe seleccionar al menos una plataforma.";
       }
 
       if (!this.form.category) {
@@ -109,7 +106,7 @@ export default {
         this.save();
         this.form = {
           name: "",
-          plataform: null,
+          platforms: [],
           category: null,
         };
       }
@@ -119,7 +116,7 @@ export default {
       this.axios
         .post(this.baseUrl + "/games", {
           name: vm.form.name,
-          platforms: [vm.form.plataform],
+          platforms: vm.form.platforms,
           categoryId: vm.form.category,
         })
         .then(function (response) {
