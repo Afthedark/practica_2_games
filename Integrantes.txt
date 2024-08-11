@@ -1,0 +1,11 @@
+Practica 2 Vue
+
+Nombres de los integrantes:
+    Clever Dorian Bernal Terrazas
+    Luis Gonzalo Garey Tito
+    Wilbert Cristian Condori
+
+Pasos para iniciar el proyecto:
+    npm install
+    npm run backend
+    npm run serve
