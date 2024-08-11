@@ -62,7 +62,7 @@ export default {
   name: "NewGame",
   data() {
     return {
-      plataforms: ["PC", "PS4", "XBOX"],
+      plataforms: ["PC", "PS4", "XBOX", "Nintendo Switch"],
       form: {
         name: "",
         platforms: [],
