@@ -1,55 +1,73 @@
 <template>
-  <div>
-    <div class="row justify-content-start">
-      <div class="col-md-2">
-        
-        <button @click="buscar" class="btn btn-lith" style="float:right">Buscar</button>
-        <input type="search" style="float:right" v-model="textToSearch" @search="buscar()">
+  <div style="margin: 0 50px">
+    <div>
+      <div class="row justify-content-start">
+        <div class="col-md-2">
+          <button @click="buscar" class="btn btn-lith" style="float: right">
+            Buscar
+          </button>
+          <input
+            type="search"
+            style="float: right"
+            v-model="textToSearch"
+            @search="buscar()"
+          />
+        </div>
       </div>
-    </div>
 
-    <Modal v-model:modelValue="showModalNuevo">
-      <NewCategoryView @on-register="onRegister" />
-    </Modal>
-    <Modal v-model:modelValue="showModalEdit">
-      <EditCategoryView @on-update="onUpdate" :item="itemToEdit" />
-    </Modal>
+      <Modal v-model:modelValue="showModalNuevo">
+        <NewCategoryView @on-register="onRegister" />
+      </Modal>
+      <Modal v-model:modelValue="showModalEdit">
+        <EditCategoryView @on-update="onUpdate" :item="itemToEdit" />
+      </Modal>
 
-    <div class="row justify-content-start">
-      <div class="col-md-2">
-        <button class="btn btn-primary" @click="showModalNuevo = true">Agregar Categoría</button>
+      <div class="row justify-content-start">
+        <div class="col-md-2">
+          <button class="btn btn-primary" @click="showModalNuevo = true">
+            Agregar Categoría
+          </button>
+        </div>
       </div>
-    </div>
 
-    <br>
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in categories" :key="index">
-          <td scope="row">{{ index + 1 }}</td>
-          <td>{{ item.name }}</td>
-          <td>
-            <button @click="edit(item)" class="btn btn-dark" style="margin-right: 15px;">Editar</button>
-            <button @click="eliminar(item.id)" class="btn btn-danger">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <br />
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in categories" :key="index">
+            <td scope="row">{{ index + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>
+              <button
+                @click="edit(item)"
+                class="btn btn-dark"
+                style="margin-right: 15px"
+              >
+                Editar
+              </button>
+              <button @click="eliminar(item.id)" class="btn btn-danger">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
-import axios from 'axios';
-import Modal from '../../components/Modal.vue'
-import NewCategoryView from './NewCategoryView.vue'
-import EditCategoryView from './EditCategoryView.vue'
+import { mapState, mapGetters, mapActions } from "vuex";
+import axios from "axios";
+import Modal from "../../components/Modal.vue";
+import NewCategoryView from "./NewCategoryView.vue";
+import EditCategoryView from "./EditCategoryView.vue";
 
 export default {
   name: "Categorias",
@@ -58,20 +76,20 @@ export default {
       showModalNuevo: false,
       showModalEdit: false,
       itemToEdit: null,
-      textToSearch: '',
-      categories: []
-    }
+      textToSearch: "",
+      categories: [],
+    };
   },
   components: {
     Modal,
     NewCategoryView,
-    EditCategoryView
+    EditCategoryView,
   },
   methods: {
-    ...mapActions(['increment']),
     getCategories() {
       const vm = this;
-      axios.get("http://localhost:4000/categories")
+      axios
+        .get(this.baseUrl + `/categories`)
         .then(function (response) {
           vm.categories = response.data;
         })
@@ -81,7 +99,8 @@ export default {
     },
     buscar() {
       const vm = this;
-      axios.get("http://localhost:4000/categories?q=" + this.textToSearch)
+      axios
+        .get(this.baseUrl + `/categories?q=${this.textToSearch}`)
         .then(function (response) {
           vm.categories = response.data;
         })
@@ -96,7 +115,8 @@ export default {
     eliminar(id) {
       if (confirm("¿Está seguro de eliminar el registro?")) {
         const vm = this;
-        axios.delete(this.baseUrl + "/categories/" + id)
+        axios
+          .delete(this.baseUrl + `/categories/${id}`)
           .then(function (response) {
             vm.getCategories();
             vm.showToast("Registro eliminado.", "danger");
@@ -109,29 +129,28 @@ export default {
     onRegister(event) {
       this.getCategories();
       this.showModalNuevo = false;
-      this.showToast('Registro exitoso', 'success');
+      this.showToast("Registro exitoso", "success");
     },
     onUpdate(event) {
       this.getCategories();
       this.showModalEdit = false;
       this.itemToEdit = null;
-      this.showToast('Edición exitosa', 'info');
+      this.showToast("Edición exitosa", "info");
     },
     showToast(message, type) {
       this.$toast.show(message, type);
-    }
+    },
   },
   computed: {
-    ...mapState(['count']),
-    ...mapGetters(['doubleCount', 'getBaseUrl']),
+    ...mapGetters(["getBaseUrl"]),
     baseUrl() {
       return this.getBaseUrl;
-    }
+    },
   },
   mounted() {
     this.getCategories();
-  }
-}
+  },
+};
 </script>
 
 <style scoped></style>

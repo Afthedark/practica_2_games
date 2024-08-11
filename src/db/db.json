@@ -51,23 +51,15 @@
     {
       "name": "Espacio",
       "id": "sNUjOGT"
-    },
-    {
-      "name": "Mundo abierto",
-      "id": "brsPdkM"
-    },
-    {
-      "name": "Steam, Epic, Gog",
-      "id": "WQxiSdj"
     }
   ],
   "games": [
     {
       "id": "1",
       "name": "Call of Duty black ops 6",
-      "categoryId": "brsPdkM",
+      "categoryId": "5",
       "platforms": [
-        "PC"
+        "PS4"
       ]
     },
     {
@@ -83,9 +75,7 @@
       "name": "Civilization VI",
       "categoryId": "3",
       "platforms": [
-        "PC",
-        "Mac",
-        "iOS"
+        "PC"
       ]
     },
     {
@@ -93,10 +83,7 @@
       "name": "FIFA 21",
       "categoryId": "4",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One",
-        "Nintendo Switch"
+        "Xbox One"
       ]
     },
     {
@@ -112,10 +99,7 @@
       "name": "The Sims 4",
       "categoryId": "6",
       "platforms": [
-        "PC",
-        "Mac",
-        "PS4",
-        "Xbox One"
+        "PC"
       ]
     },
     {
@@ -123,8 +107,7 @@
       "name": "Tetris Effect",
       "categoryId": "7",
       "platforms": [
-        "PC",
-        "PS4"
+        "PC"
       ]
     },
     {
@@ -132,7 +115,6 @@
       "name": "Forza Horizon 4",
       "categoryId": "8",
       "platforms": [
-        "PC",
         "Xbox One"
       ]
     },
@@ -141,9 +123,7 @@
       "name": "Among Us",
       "categoryId": "9",
       "platforms": [
-        "PC",
-        "iOS",
-        "Android"
+        "PC"
       ]
     },
     {
@@ -151,9 +131,7 @@
       "name": "Resident Evil 7",
       "categoryId": "10",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One"
+        "PS4"
       ]
     },
     {
@@ -161,11 +139,7 @@
       "name": "Assassin's Creed Valhalla",
       "categoryId": "2",
       "platforms": [
-        "PC",
-        "PS4",
-        "PS5",
-        "Xbox One",
-        "Xbox Series X"
+        "PS4"
       ]
     },
     {
@@ -173,12 +147,7 @@
       "name": "Fortnite",
       "categoryId": "1",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One",
-        "Nintendo Switch",
-        "iOS",
-        "Android"
+        "PS4"
       ]
     },
     {
@@ -186,12 +155,7 @@
       "name": "Stardew Valley",
       "categoryId": "6",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One",
-        "Nintendo Switch",
-        "iOS",
-        "Android"
+        "PC"
       ]
     },
     {
@@ -207,9 +171,7 @@
       "name": "Dark Souls III",
       "categoryId": "5",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One"
+        "PC"
       ]
     },
     {
@@ -217,10 +179,7 @@
       "name": "Overwatch",
       "categoryId": "1",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One",
-        "Nintendo Switch"
+        "PC"
       ]
     },
     {
@@ -228,9 +187,6 @@
       "name": "Rocket League",
       "categoryId": "8",
       "platforms": [
-        "PC",
-        "PS4",
-        "Xbox One",
         "Nintendo Switch"
       ]
     }
