@@ -7,5 +7,5 @@ Nombres de los integrantes:
 
 Pasos para iniciar el proyecto:
     npm install
-    npm run backend
     npm run serve
+    npm run backend

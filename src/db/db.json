@@ -195,10 +195,21 @@
     {
       "name": "mario kart 8 pirata ",
       "platforms": [
-        "PC"
+        "Nintendo Switch"
       ],
       "categoryId": "8",
       "id": "86Ve4g6"
+    },
+    {
+      "name": "games test ",
+      "platforms": [
+        "PS4",
+        "Nintendo Switch",
+        "Xbox One",
+        "PC"
+      ],
+      "categoryId": "9",
+      "id": "5-MVb7b"
     }
   ]
 }
