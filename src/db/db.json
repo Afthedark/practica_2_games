@@ -59,8 +59,8 @@
       "name": "Call of Duty black ops 6",
       "categoryId": "5",
       "platforms": [
-        "PS4",
         "PC",
+        "PS4",
         "Nintendo Switch"
       ]
     },
@@ -191,14 +191,6 @@
       "platforms": [
         "Nintendo Switch"
       ]
-    },
-    {
-      "name": "starfield",
-      "platforms": [
-        "XBOX"
-      ],
-      "categoryId": "5",
-      "id": "TePQJYy"
     },
     {
       "name": "mario kart 8 pirata ",

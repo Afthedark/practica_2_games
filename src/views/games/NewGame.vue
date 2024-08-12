@@ -16,14 +16,27 @@
 
       <div class="form-group">
         <label>Plataformas:</label>
-        <div v-for="platform in plataforms" :key="platform">
-          <input
-            type="checkbox"
-            :id="platform"
-            :value="platform"
-            v-model="form.platforms"
-          />
-          <label :for="platform">{{ platform }}</label>
+        <div style="border: 1px solid #ccc; padding: 5px; border-radius: 5px">
+          <div
+            v-for="platform in plataforms"
+            :key="platform"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 5px;
+            "
+          >
+            <label :for="platform">{{ platform }}</label>
+            <div>
+              <input
+                type="checkbox"
+                :id="platform"
+                :value="platform"
+                v-model="form.platforms"
+              />
+            </div>
+          </div>
         </div>
         <div v-if="errors.platforms" class="invalid-feedback">
           {{ errors.platforms }}
@@ -56,13 +69,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
+import { platformsArray } from "../../contants.js";
 
 export default {
   name: "NewGame",
   data() {
     return {
-      plataforms: ["PC", "PS4", "XBOX"],
+      plataforms: platformsArray,
       form: {
         name: "",
         platforms: [],

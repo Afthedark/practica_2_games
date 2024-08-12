@@ -81,10 +81,11 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 import Modal from "../../components/Modal.vue";
 import EditGame from "./EditGame.vue";
 import NewGame from "./NewGame.vue";
+import { platformsArray } from "../../contants.js";
 
 export default {
   name: "JuegosView",
@@ -95,7 +96,7 @@ export default {
       itemToEdit: null,
       textToSearch: "",
       games: [],
-      platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch"],
+      platforms: platformsArray,
       path: "",
       textToFilter: "",
       filter: {
