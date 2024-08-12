@@ -4,14 +4,13 @@
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 ### Run backend server (json-server)
 ```
 npm run backend
+```
+### Compiles and hot-reloads for development
+```
+npm run serve
 ```
 ### Compiles and minifies for production
 ```
